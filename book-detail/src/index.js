@@ -26,7 +26,9 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>Beloved #1 bestselling author James Patterson delivers a thrilling novel about a teen caught between two worlds and the truths that could set her free—or trap her forever</p>
+      </Book>
 
       <Book 
         img={secondBook.img}
@@ -43,6 +45,7 @@ const Book = (props) => {
       <img src={props.img} alt="" />
       <h3>{props.title}</h3>
       <h4>{props.author}</h4>
+      {props.children}
     </article>
   </div>)
 }

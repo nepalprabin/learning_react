@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 // CSS
 import './index.css';
@@ -9,11 +9,13 @@ import './index.css';
 
 const books = [
     {
-    img: "https://m.media-amazon.com/images/I/81-lFNjZorL._AC_UL640_FMwebp_QL65_.jpg",
-    title: "I'm Glad My Mom Died",
-    author: "Jennette McCurdy"
+      id:1,
+      img: "https://m.media-amazon.com/images/I/81-lFNjZorL._AC_UL640_FMwebp_QL65_.jpg",
+      title: "I'm Glad My Mom Died",
+      author: "Jennette McCurdy"
     },
     {
+      id:2,
       img: "https://m.media-amazon.com/images/I/91+NmjDsLOL._AC_UL640_FMwebp_QL65_.jpg",
       title: "Regretting You",
       author: "Colleen Hoover"
@@ -25,7 +27,7 @@ function BookList() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return (<Book book={book}></Book>)
+        return (<Book key={book.id} {...book}></Book>)
       })
     }
     </section>
@@ -33,7 +35,7 @@ function BookList() {
 }
 
 const Book = (props) => {
-  const {img, title, author} = props.book
+  const {img, title, author} = props
   return (<div>
     <article className="book">
       <img src={img} alt="" />
@@ -43,4 +45,6 @@ const Book = (props) => {
   </div>)
 }
 
-ReactDOM.render(<BookList />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<BookList />)
+// ReactDOM.render(<BookList />, document.getElementById("root"));

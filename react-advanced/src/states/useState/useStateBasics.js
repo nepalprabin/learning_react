@@ -15,7 +15,8 @@ function UseStates() {
 
   return (
     <React.Fragment>
-      <h2>{text}</h2>
+      <h2>Use State Basics</h2>
+      <h3>{text}</h3>
       <button type='button' className='btn' onClick={clickHandler}>Click Here</button>
     </React.Fragment>
   )

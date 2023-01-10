@@ -4,6 +4,7 @@ import UseStates from './states/useState/useStateBasics';
 import UseStateArray from './states/useState/useStateArray';
 import UseStateObject from './states/useState/useStateObject';
 import UseStateCounter from './states/useState/useStateCounter';
+import UseEffectBasics from './states/useEffect/useEffectBasics';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <UseStateArray />
       <UseStateObject />
       <UseStateCounter />
+      <UseEffectBasics />
     </div>
   )
 }
